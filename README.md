@@ -38,17 +38,20 @@ Navigate to  http://localhost:4000
 
 npm install --save react react-dom @babel/preset-react
 
-###### Update .babelrc 
+###### Update .babelrc
 
+```text
 {
     "presets": [
         "@babel/preset-env",
         "@babel/preset-react" # add this line
     ]
 }
+```
 
 ###### Update webpack.config.js 
 
+```text
 rules: [
 {
     test: /\.(js|jsx)$/, # change this line
@@ -57,18 +60,22 @@ rules: [
     loader: 'babel-loader'
     }
 }
+```
 
 ###### Update app.js with the following code 
 
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Hello from './components/hello'
 ReactDOM.render(<Hello />, document.getElementById('root'))
+```
 
 
 ###### Create a new file hello.js in /js/components 
 
+```js
 import React from 'react';
 
 export default class Hello extends React.Component {
@@ -79,9 +86,12 @@ export default class Hello extends React.Component {
     )
   }
 }
+```
 
 ###### Replace templates/page/index.html.eex with the following
 
+```js
 <div id="root"></div>
+```
 
 The page will autoreload after these changes and the react page will be rendered
